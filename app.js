@@ -23,7 +23,7 @@ const blogRoutes = require('./Routes/blogs');
 const reviewRoutes = require('./Routes/reviews');
 const authRoutes = require('./Routes/auth');
 const BlogAPI = require('./Routes/APIs/blogAPI');
-// const seedDB = require('./seed');
+const seedDB = require('./seed');
 const DB = process.env.DB
 
 
@@ -32,7 +32,7 @@ const DB = process.env.DB
 
     mongoose.connect(DB)
     .then(() => {console.log('DB Connected')
-    // seedDB()
+    seedDB()
 })
     .catch((err) => console.log(err));
 
