@@ -3,6 +3,7 @@ const router = express.Router();
 const{validateBlog,isLoggedIn, isAuthor} = require('../middleware');
 const {showAllBlogs, newBlogForm, newBlog, showBlog, editBlogForm, editBlog, deleteBlog} = require('../Controllers/blogs');
 
+router.get('/',showAllBlogs);
 router.get('/blogs', showAllBlogs);
 router.get('/blogs/new', isLoggedIn, newBlogForm);
 router.post('/blogs', isLoggedIn, validateBlog, newBlog);
